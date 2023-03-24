@@ -1,0 +1,91 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --span: 1;
+  --linkColor: #11967e;
+  --linkHoverColor: #000;
+  --cardTransitionTime: 0.4s;
+  --tagBorderColor: #11967e;
+  --tagBorderBgColor: #fff;
+  --cardBackgroundColor: #fff;
+  --disabledLinkColor: #878787;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  background: #f3f3f3;
+}
+
+@media screen and (min-width: 480px) {
+  :root {
+    --span: 2;
+  }
+}
+@media screen and (min-width: 768px) {
+  :root {
+    --span: 3;
+  }
+}
+@media screen and (min-width: 960px) {
+  :root {
+    --span: 4;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 20;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.thumnail {
+  height: 294px;
+}
+
+.title {
+  font-size: 24px;
+  color: #11967e;
+}
+
+/*
+  -------------------
+  layout breakpoints:
+  -------------------
+  
+  Below 480px: 1 column
+  Below 768px: 2 columns
+  Below 960px: 3 columns
+  Wider screen: 4 columns
+
+  gutter (space between items): 20px;
+
+  outer layout should have 15px margin horizontally
+
+  ----
+  item
+  ----
+  Should display a 1:1 image at top,
+  text content below
+  Card background: white
+  Round corner: 10px
+  Text color: --linkColor
+  Box Shadow: x: 0, y: 1px, blur 3px, color: black with 20% transparency
+
+  When hover should only change color of title, description and price, also enlarge image by 20%. The item will also have darker (double) box shadow
+
+  there should also be a category tag positioned in-between the image and text content of round corner
+
+  Text content should have reasonable padding around
+  Price should be aligned to right at the bottom right of the card.
+*/
